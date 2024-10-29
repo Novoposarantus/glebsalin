@@ -105,7 +105,6 @@
             </div>
         </div>
     </section>
-
     <footer id="contact">
         <h2>Связаться</h2>
         <p>Contact details: email@example.com, Telegram: @username</p>
@@ -119,24 +118,24 @@
             data() {
                 return {
                     images: [
-                    { src: `https://drive.google.com/uc?export=download&id=1n-1OhxotQGPX5ZNL8M27LMy5y4sEIGt8`, name: 'Image 1', price: '$100' },
-                        { src: `https://downloader.disk.yandex.ru/preview/3d71b57cb2accbc68a0987a2126879789d6a758567fbdd97347fcb3f3a35360c/67214d43/wrfaZRuiUUopUMh223NnlG8xQoXsohkVPSNYzj7m6DsOBWLAKDNjjfP3E-XqYTBrqOrUcYK_V8eZ9-KIeF5Svg%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.17.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 2', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/847aa673ad4ab8a0bd9862c8b4e4a4cb81ab1bc1227813bfbe06f723ad430797/67214d90/xLm4LaKIk5pAEIDD_aGnJqaygXllJKpBjfFuFO09vHozq6cDtzbnQGBPXgyw6FJkuxDsfAsJMgqTWv8Yl3KdAw%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.34.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 3', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/285d6a49745a4e7176affae340b546e94834db2f58f07a7d1681fb92be334026/67214db6/fy1wh6BopEFCmyg6MiR_OjMMm3GMlCTpajwSIkTxb8XEkyaFie6Of8xjAgOHNHtHmRiR7zEdqaPA_ARtUyvFYA%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.35.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 4', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/c3de80e723d5fb3743b376fb04145c7e30ca0ee1b9ea964409d3959170a36bc9/67214dca/KUSvkCNNelqnRaC2jIS6O28xQoXsohkVPSNYzj7m6Ds18xS2C2lOwKmcdBX5ukmmFl8FXAYsO6FJLYvgvRMOSA%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.36%20%281%29.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 5', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/cf21daf780c4f887627f2ed53a3de7b54702501daca86969fa26609c06947c37/67214dd7/kEbSGVFP5piDQouKJziz9ByJCVc9QYwr9ov-yfwWoCxMynao3kGXLZAHl6yT8Pz7bCCbtx8a-K5UxPheA0Zb5g%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.36.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 6', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/6cb3844e26b6173c10f00ada36ec15b642e1c2168192885638a864566ff1620f/67214e3b/UNFfXyetjhvV44sxAZTjocrWgXrdwOQqa73I-NxhxGWAXQZaBgHG0zo6FM7vPUo7E4S65hqWq2Sm1RQd407jvQ%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.37.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 7', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/049d9437d43a01a28e206ca873ed3f7c566d046c0d964b9b0e7db132732159f6/67214e4b/Azot2G0csnN82lELgQBo428xQoXsohkVPSNYzj7m6Dshvfk4nAXyJFjB6eTYg4osQbKKW22n72PYY0wNB5e9pQ%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.38%20%281%29.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 8', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/7845b2a4736fa9836d6674d856a672172f5faaaf9c11957fecc527f15dc24d56/67214e6c/yMojHJLirl2-DCGA2y3bCzFr2H7yzcrJsjLmGg548XPb1LGHq1LrabjMZ5VelI1zDpk-VKdO9ZQnIXz2tnr_YA%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.38.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 9', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/d694245d65177b72729d244534e125434dc9756e49f798d73adb8416cc261984/67214ed5/V2TrYA1r7QxoBjaX_iUOAzr6ScA6hv12sblyWySSg_oYVDjQnZQgffufVQEZFnjwbA_zVC0dFG1a_SIVjIOf9w%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.39.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 10', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/c6ab8ce18ba20a0b0aea4c05b5b5d6cb909cefc7c9c8eb8f258b07110d7df471/67214f41/sqq7TVndP4aKPip9_bdeHjMMm3GMlCTpajwSIkTxb8VS_z3QFPgsMVo6TdMsVuDiv_BcPrm8GRTzMkBE5tTNeg%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.40.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 11', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/cf3b0bc0154610d05f9c5ab36851e194cfb2d1512623142be18e2cb27aab61e8/67214f88/NzXLDlbg3a3QXn3GxGhCoDFr2H7yzcrJsjLmGg548XN8hahT0cuFxSGPpfWlMl3rLZ2vW9CodFrh9N-js1zqmQ%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.41%20%281%29.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 12', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/e579ec8d91b0c233349af8652a921f2131ab56efccc17935d0f037255b9647df/67214fb2/WG_MQ74Khi-ppQTGcBUHYhyJCVc9QYwr9ov-yfwWoCwMfTHgMQmoMcGNQaecCFrBNwvCs7RYCVZorARv7MlWiQ%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.41.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 13', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/59cc1b5b439b8b82a973aa250181393344d082f60ea5f85e2bd37000ac3b27ba/67214fc1/I7ldKRXLE2dcARfhra_8bTFr2H7yzcrJsjLmGg548XMPtywNTXeoxcHrzRoIvVbtjRnGJ2RKzpE9ZOxj_7TsOA%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.42.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 14', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/8c273c32e1666dc722f8bcb847a830d25dc9a11199020c95bc108a457f3a1765/67214fd0/GaH7HPTF7y4zoylabNTw528xQoXsohkVPSNYzj7m6DsZYkAtWpXNU9ZWNkGhIBcrYDnt-AQwNdA-2L0C1is0ig%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.43%20%281%29.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 15', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/2c513face78cabf7a1a760cdb2399553d5db2da2259f316ed731357312886394/67214fdd/D4AdLejnmWfBkd87_ppMIdLZ3hH4jDpUNZZqTSFX38PVnQGjkbXx2xe3LGPGyp-WbjZRk2-RcQwEQJhy9we6Tg%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.43.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 16', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/2d9c3acba8907bc278ca3bc413d49bdabcc67fa0621e8f57e1248a9528aeb905/67214feb/L7Ob7ZgzIjm3uD3JTdYFcjFr2H7yzcrJsjLmGg548XPd84hnZZ4OFYG_sBIEnjtk1LTfXhRbgwLtrYmhgiPjvA%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.44%20%281%29.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 17', price: '$150' },
-                        { src: `https://downloader.disk.yandex.ru/preview/2485d3d50a5baaf31a5e059cb08fec21184a079b069fd9efb809459e821c1212/67214ffe/mJZhpTz6L763knNaqGQQxG8xQoXsohkVPSNYzj7m6DvfnnhHHFBFZpax6I5LOlLHnZaXHsCYiuqy9QfzTU4fBQ%3D%3D?uid=0&filename=photo_2024-10-29%2019.47.44.jpeg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=${imageSize}`, name: 'Image 18', price: '$150' },
+                        { src: `https://i.ibb.co/gz5TQHW/13.png`, name: 'Image 1', price: '$100' },
+                        { src: `https://i.ibb.co/GvJGhJB/photo-2024-10-29-19-47-44-1.jpg`, name: 'Image 2', price: '$150' },
+                        { src: `https://i.ibb.co/z5h2xtT/photo-2024-10-29-19-47-44.jpg`, name: 'Image 3', price: '$150' },
+                        { src: `https://i.ibb.co/MVNLBDx/photo-2024-10-29-19-47-43-1.jpg`, name: 'Image 4', price: '$150' },
+                        { src: `https://i.ibb.co/Svz5ZF8/photo-2024-10-29-19-47-43.jpg`, name: 'Image 5', price: '$150' },
+                        { src: `https://i.ibb.co/QjYjtBL/photo-2024-10-29-19-47-42.jpg`, name: 'Image 6', price: '$150' },
+                        { src: `https://i.ibb.co/VLC32wK/photo-2024-10-29-19-47-41-1.jpg`, name: 'Image 7', price: '$150' },
+                        { src: `https://i.ibb.co/VgLgVnQ/photo-2024-10-29-19-47-41.jpg`, name: 'Image 8', price: '$150' },
+                        { src: `https://i.ibb.co/FhcJrqw/photo-2024-10-29-19-47-40.jpg`, name: 'Image 9', price: '$150' },
+                        { src: `https://i.ibb.co/MsNMkWD/photo-2024-10-29-19-47-39.jpg`, name: 'Image 10', price: '$150' },
+                        { src: `https://i.ibb.co/nLt0JNT/photo-2024-10-29-19-47-38-1.jpg`, name: 'Image 11', price: '$150' },
+                        { src: `https://i.ibb.co/jwjDztM/photo-2024-10-29-19-47-38.jpg`, name: 'Image 12', price: '$150' },
+                        { src: `https://i.ibb.co/DCXDWsQ/photo-2024-10-29-19-47-37.jpg`, name: 'Image 13', price: '$150' },
+                        { src: `https://i.ibb.co/DwLsBFZ/photo-2024-10-29-19-47-36-1.jpg`, name: 'Image 14', price: '$150' },
+                        { src: `https://i.ibb.co/HpSyKCr/photo-2024-10-29-19-47-36.jpg`, name: 'Image 15', price: '$150' },
+                        { src: `https://i.ibb.co/zsxPB1V/photo-2024-10-29-19-47-35.jpg`, name: 'Image 16', price: '$150' },
+                        { src: `https://i.ibb.co/2MgZxy7/photo-2024-10-29-19-47-34.jpg`, name: 'Image 17', price: '$150' },
+                        { src: `https://i.ibb.co/N18YcDR/photo-2024-10-29-19-47-17.jpg`, name: 'Image 18', price: '$150' },
                         // Add more images here
                     ]
                 }
