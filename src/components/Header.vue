@@ -1,14 +1,14 @@
 <template>
     <div class="wrapper" v-if="showHeader">
         <img
-            :src="`/img/title.svg`" 
+            :src="getImageUrl(`title.svg`)"
             alt="Title"
             class="svg-image"
         />
         <div class="info-container">
             <div class="photo-container half-block">
                 <img
-                    :src="`/img/header_photo.jpg`" 
+                    :src="getImageUrl(`header_photo.jpg`)" 
                     alt="photo"
                     class="header-photo"
                 />
@@ -25,6 +25,10 @@
 <script setup>
 import {computed} from 'vue'
 import { useRoute } from 'vue-router'
+
+const getImageUrl = (path) => {
+  return import.meta.env.BASE_URL + 'img/' + path
+}
 
 const route = useRoute()
 const showHeader = computed(() => route.meta.showHeader)
