@@ -1,21 +1,23 @@
 <template>
     <div class="wrapper" v-if="showHeader">
-        <img
-            :src="getImageUrl(`title.svg`)"
-            alt="Title"
-            class="svg-image"
-        />
+        <div class="title-wrapper">
+            <img
+                :src="getImageUrl(`title.svg`)"
+                alt="Title"
+                class="svg-image"
+            />
+        </div>
         <div class="info-container">
-            <div class="photo-container half-block">
+            <div class="photo-container">
                 <img
                     :src="getImageUrl(`header_photo.jpg`)" 
                     alt="photo"
                     class="header-photo"
                 />
             </div>
-            <div class="half-block">
+            <div class="info-text-container">
                 <div>
-                    CONTEMPORARY ARTIST CURRENTLY LIVING AND WORKING IN TULA.
+                    CONTEMPORARY ARTIST <br/> CURRENTLY LIVING AND <br/> WORKING IN TULA.
                 </div>
             </div>
         </div>
@@ -52,15 +54,28 @@ const showHeader = computed(() => route.meta.showHeader)
 
 .info-container {
     display: flex;
+    padding: 0 20px 0 70px
+}
+
+.info-text-container {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1rem;
+    font-size: 40px;
+
+    color: #000;
+  
+    text-shadow: 0 0 1px #89acff, 0 0 2px #89acff, 0 0 3px #89acff;
+    text-align: justify; 
+    flex: 1;
+    min-width: 0;
+    padding-bottom: 60px;
 }
 
 .photo-container {
     padding: 1rem;
-}
-
-.half-block {
-  flex: 1; /* Равное распределение пространства */
-  min-width: 0; /* Фикс для переполнения контента */
+    flex: 1.2;
+    min-width: 0;
 }
 
 .header-photo {
@@ -68,5 +83,27 @@ const showHeader = computed(() => route.meta.showHeader)
     height: auto;
     display: block;
     object-fit: cover;
+}
+
+.title-wrapper {
+  /* Базовые значения для мобильных */
+  max-height: 170px;
+
+  /* Плавные интерполяции между точками */
+  @media (min-width: 550px) {
+    max-height: calc(170px + (100vw - 550px) * (280 - 170) / (840 - 550));
+  }
+
+  @media (min-width: 840px) {
+    max-height: calc(280px + (100vw - 840px) * (350 - 280) / (1000 - 840));
+  }
+
+  @media (min-width: 1000px) {
+    max-height: calc(350px + (100vw - 1000px) * (450 - 350) / (1280 - 1000));
+  }
+
+  @media (min-width: 1280px) {
+    max-height: 450px;
+  }
 }
 </style>

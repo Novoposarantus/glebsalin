@@ -1,6 +1,5 @@
 <template>
     <div class="art-grid">
-      Main
     </div>
   </template>
   

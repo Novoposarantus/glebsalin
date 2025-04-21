@@ -1,5 +1,5 @@
 <template>
-    <nav class="main-nav">
+    <nav class="main-nav" v-if="false">
       <router-link to="/">ABOUT</router-link>
       <router-link to="/artworks">ARTWORKS</router-link>
       <router-link to="/shop">SHOP</router-link>

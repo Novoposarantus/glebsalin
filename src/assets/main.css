@@ -1,3 +1,14 @@
+:root {
+  --base-url: v-bind('__BASE_URL__');
+}
+
+html, body {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f7f7;
+  min-height: 100%;
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,6 +16,11 @@
   font-weight: normal;
   display: flex;
   flex-direction: column;
+  min-height: 100%;
+  background: linear-gradient(
+      rgba(246, 247, 247, 0.85), /* Черный фильтр с 50% прозрачностью */
+      rgba(246, 247, 247, 0.85)
+    )
 }
 
 a,
@@ -14,6 +30,7 @@ a,
   transition: 0.4s;
   padding: 3px;
 }
+
 
 @media (hover: hover) {
   a:hover {
