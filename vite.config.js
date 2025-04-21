@@ -11,7 +11,7 @@ export default defineConfig({
     vueDevTools(),
   ],
   base: process.env.NODE_ENV === 'production' 
-    ? '/your-repo-name/' 
+    ? '/glebsalin/' 
     : '/',
   server: {
     port: 8080
