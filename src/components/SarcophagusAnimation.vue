@@ -166,7 +166,7 @@
 
         /* Адаптивные отступы */
         @media (max-width: 800px) { 
-            margin: 5rem 0.5rem 0; 
+            margin: 0 0.5rem; 
         }
         /* Адаптивная высота */
         @media (max-width: 500px) { 
