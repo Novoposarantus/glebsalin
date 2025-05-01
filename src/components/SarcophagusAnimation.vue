@@ -264,6 +264,7 @@
         @media (max-width: 400px) { 
             max-width: 120px; 
         }
+        cursor: pointer;
     }
 
 /* Сама картинка галереи */
