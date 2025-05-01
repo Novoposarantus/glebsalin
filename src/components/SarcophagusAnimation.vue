@@ -141,7 +141,7 @@
                 }
                 if (loopAnimation) {
                     console.log("plage loop")
-                    //loopAnimation.play(); // Запускаем цикл после открытия
+                    loopAnimation.play(); // Запускаем цикл после открытия
                 }
             },
         });
@@ -228,6 +228,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        @media (max-width: 400px) { 
+            max-width: 120px; 
+        }
     }
 
 /* Сама картинка галереи */
