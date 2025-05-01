@@ -1,36 +1,48 @@
 <template>
     <section class="sarcophagus-section" ref="sectionRef">
-      <div class="sarcophagus-container" ref="sarcophagusContainerRef">
-  
-        <img :src="getImageUrl(`lid-left.png`)" alt="Sarcophagus Left Lid"
-           class="sarcophagus-lid sarcophagus-lid-left" ref="lidLeftRef"/>
-        <img :src="getImageUrl(`lid-right.png`)" alt="Sarcophagus Right Lid"
-            class="sarcophagus-lid sarcophagus-lid-right" ref="lidRightRef"/>
+        <div class="sarcophagus-container" ref="sarcophagusContainerRef">
 
-        <div class="sarcophagus-gallery-container" ref="galleryContainerRef">
-            <div class="sarcophagus-gallery-track" ref="galleryTrackRef">
-                <div v-for="(image, index) in galleryImages"
-                    :key="image.high || index" class="gallery-item-wrapper">
-                    <ProgressiveImage
-                        :ref="el => { if (el) imageComponentRefs[index] = el }"
-                        :lowSrc="image.low"
-                        :highSrc="image.high"
-                        :alt="image.alt || `Gallery image ${index + 1}`"
-                        class="gallery-item-image"
-                        loading="lazy" />
-                </div>
-                </div>
+            <img :src="getImageUrl(`lid-left.png`)" alt="Sarcophagus Left Lid"
+                class="sarcophagus-lid sarcophagus-lid-left" ref="lidLeftRef"/>
+            <img :src="getImageUrl(`lid-right.png`)" alt="Sarcophagus Right Lid"
+                class="sarcophagus-lid sarcophagus-lid-right" ref="lidRightRef"/>
+
+            <div class="sarcophagus-gallery-container" ref="galleryContainerRef">
+                <div class="sarcophagus-gallery-track" ref="galleryTrackRef">
+                    <div 
+                        v-for="(image, index) in galleryImages"
+                        :key="image.high || index"
+                        class="gallery-item-wrapper"
+                        @click="showLightbox(index)"
+                    >
+                        <ProgressiveImage
+                            :ref="el => { if (el) imageComponentRefs[index] = el }"
+                            :lowSrc="image.low"
+                            :highSrc="image.high"
+                            :alt="image.alt || `Gallery image ${index + 1}`"
+                            class="gallery-item-image"
+                            loading="lazy" />
+                    </div>
+                    </div>
+            </div>
         </div>
-  
-        </div>
+
+    <VueEasyLightbox
+        :visible="lightboxVisible"
+        :imgs="lightboxImages"
+        :index="lightboxIndex"
+        @hide="handleLightboxHide"
+    />
     </section>
-  </template>
+</template>
   
 <script setup>
-    import { ref, onMounted, onUnmounted, nextTick } from 'vue';
+    import { ref, onMounted, onUnmounted, nextTick, computed } from 'vue';
     import gsap from 'gsap';
     import ScrollTrigger from 'gsap/ScrollTrigger';
     import ProgressiveImage from '../components/ProgressiveImage.vue';
+    import VueEasyLightbox from 'vue-easy-lightbox'; // !!! Импорт лайтбокса !!!
+    import 'vue-easy-lightbox/dist/external-css/vue-easy-lightbox.css'; // !!! Импорт стилей лайтбокса !!!
     import { config } from '../config';
     import { imgHelper } from '../helpers';
 
@@ -44,6 +56,13 @@
     const galleryContainerRef = ref(null); 
     const galleryTrackRef = ref(null); 
     const imageComponentRefs = ref([]);
+
+    const lightboxVisible = ref(false);
+    const lightboxIndex = ref(0);
+
+    const lightboxImages = computed(() => {
+      return config.mainImagesConfig.map(img => img.high || img.low);
+    });
 
     const galleryImages = ref([...config.mainImagesConfig, ...config.mainImagesConfig]);
 
@@ -153,6 +172,20 @@
         if (scrollTriggerInstance) scrollTriggerInstance.kill();
         if (openingTimeline) openingTimeline.kill();
     });
+
+    // --- !!! Функции для Лайтбокса !!! ---
+    const showLightbox = (indexInDoubledArray) => {
+      // Рассчитываем индекс относительно ОРИГИНАЛЬНОГО массива
+      const originalIndex = indexInDoubledArray % config.mainImagesConfig.length;
+      console.log(`Show lightbox for original index: ${originalIndex} (clicked index: ${indexInDoubledArray})`);
+      lightboxIndex.value = originalIndex;
+      lightboxVisible.value = true;
+    };
+
+    const handleLightboxHide = () => {
+      console.log('Hiding lightbox');
+      lightboxVisible.value = false;
+    };
 
   </script>
   

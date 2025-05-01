@@ -3,6 +3,7 @@
 }
 
 html, body {
+  width: 100%;
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -37,6 +38,8 @@ html, body {
 #app {
   max-width: 1280px;
   min-width: 320px;
+  width: 100%;
+  height: 100%;
 
   margin: 0 auto; /* Центрирование */
   padding: 0 1rem; /* Горизонтальные отступы */
