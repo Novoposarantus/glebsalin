@@ -1,1 +1,0 @@
-import{c as r,F as a,d as o,u as c,e as t}from"./index-C_fk7an5.js";const n={class:"art-grid"},_=["src"],k={__name:"Artworks",setup(l){const s=new Array(12);return(m,i)=>(t(),r("div",n,[(t(!0),r(a,null,o(c(s),(u,e)=>(t(),r("img",{key:e,src:`/img/artwork-${e+1}.jpg`,alt:"Artwork",class:"art-image"},null,8,_))),128))]))}};export{k as default};
