@@ -141,7 +141,7 @@
                 }
                 if (loopAnimation) {
                     console.log("plage loop")
-                    loopAnimation.play(); // Запускаем цикл после открытия
+                    //loopAnimation.play(); // Запускаем цикл после открытия
                 }
             },
         });
