@@ -90,7 +90,12 @@
 <style scoped>
     .progressive-image {
         opacity: 1;
+        filter: blur(5px);
         transition: opacity 0.4s ease-in-out, filter 0.4s ease-in-out;
+    }
+
+    .progressive-image.is-loaded {
+        filter: blur(0);
     }
 
 </style>
