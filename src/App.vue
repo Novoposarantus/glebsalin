@@ -1,4 +1,4 @@
-<template :style="appStyle">
+<template>
   <Header />
   <NavBar />
   <router-view />
@@ -9,10 +9,6 @@ import { computed, onMounted, nextTick } from 'vue';
 
 import NavBar from './components/NavBar.vue'
 import Header from './components/Header.vue'
-
-const appStyle = computed(() => ({
-  backgroundImage: `url('${import.meta.env.BASE_URL}img/background.jpg')`
-}))
 
 onMounted(async () => {
   const loader = document.getElementById('app-loader');
@@ -32,6 +28,6 @@ onMounted(async () => {
 });
 </script>
 
-<style scoped>
+<style>
 
 </style>

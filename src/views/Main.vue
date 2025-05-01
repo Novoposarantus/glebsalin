@@ -11,10 +11,23 @@
 </template>
   
 <script setup>
+import { onMounted, onUnmounted } from 'vue';
 import SarcophagusAnimation from '../components/SarcophagusAnimation.vue'
 const getImageUrl = (path) => {
   return import.meta.env.BASE_URL + 'img/' + path;
 }
+
+// Когда компонент Main.vue монтируется (т.е. пользователь на главной странице)
+onMounted(() => {
+  // Добавляем класс к <body>
+  document.body.classList.add('main-page-background-active');
+});
+
+// Когда компонент Main.vue размонтируется (т.е. пользователь уходит с главной)
+onUnmounted(() => {
+  // Убираем класс с <body>
+  document.body.classList.remove('main-page-background-active');
+});
 </script>
   
 <style scoped>

@@ -5,11 +5,29 @@
 html, body {
   display: flex;
   flex-direction: column;
-  background-color: #f6f7f7;
   min-height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+body::before {
+  content: ""; /* Обязательно для псевдо-элементов */
+  position: fixed; /* Фиксируем относительно окна браузера */
+  inset: 0; /* top: 0; right: 0; bottom: 0; left: 0; - Растягиваем на весь экран */
+  z-index: -1; /* Помещаем ПОД основной контент */
+
+  /* Начальное состояние - фона нет, он прозрачен */
+  background-image: none;
+  background-size: cover; /* Масштабируем, чтобы покрыть */
+  background-position: center center; /* Центрируем */
+  background-repeat: no-repeat;
+
+  pointer-events: none;
+}
+
+body.main-page-background-active::before {
+  background-image: url('/glebsalin/img/background.png');
 }
 
 #app {
@@ -65,7 +83,7 @@ a,
 
 @font-face {
   font-family: 'GlebSalinFont';
-  src: url('/fonts/Gleb.ttf') format('truetype');
+  src: url('/glebsalin/fonts/Gleb.ttf') format('truetype');
   font-weight: normal;
   font-style: normal; 
   font-display: swap;
