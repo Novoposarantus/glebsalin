@@ -42,9 +42,30 @@ a,
   padding: 3px;
 }
 
+#app-loader {
+  position: fixed;
+  inset: 0; /* top/right/bottom/left = 0 */
+  background-color: white; /* Или твой цвет фона */
+  z-index: 9999; /* Очень высокий, поверх всего */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* Изначально видим */
+  pointer-events: auto;
+  transition: opacity 0.5s ease-out;
+}
+#app-loader.hidden {
+  opacity: 0;
+  pointer-events: none; /* Чтобы не мешал кликам после исчезновения */
+}
+#app-loader img {
+  width: 100px; /* Задай размер своей гифки */
+  height: 100px;
+}
+
 @font-face {
   font-family: 'GlebSalinFont';
-  src: url('/glebsalin/fonts/Gleb.ttf') format('truetype');
+  src: url('/fonts/Gleb.ttf') format('truetype');
   font-weight: normal;
   font-style: normal; 
   font-display: swap;

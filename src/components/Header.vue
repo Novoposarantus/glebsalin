@@ -9,8 +9,9 @@
         </div>
         <div class="info-container">
             <div class="photo-container">
-                <img
-                    :src="getImageUrl(`photo_with_border.jpg`)" 
+                <ProgressiveImage
+                    :lowSrc="getImageUrl('header/low/photo_with_border.jpg')"
+                    :highSrc="getImageUrl('header/high/photo_with_border.jpg')"
                     alt="photo"
                     class="header-photo"
                 />
@@ -27,11 +28,10 @@
 <script setup>
 import {computed} from 'vue'
 import { useRoute } from 'vue-router'
+import { imgHelper } from '../helpers';
+import ProgressiveImage from './ProgressiveImage.vue';
 
-const getImageUrl = (path) => {
-  return import.meta.env.BASE_URL + 'img/' + path
-}
-
+const getImageUrl = imgHelper.getImageUrl;
 const route = useRoute()
 const showHeader = computed(() => route.meta.showHeader)
 </script>
