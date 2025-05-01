@@ -7,20 +7,31 @@ html, body {
   flex-direction: column;
   background-color: #f6f7f7;
   min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 #app {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  min-width: 320px;
+
+  margin: 0 auto; /* Центрирование */
+  padding: 0 1rem; /* Горизонтальные отступы */
   font-weight: normal;
   display: flex;
   flex-direction: column;
   min-height: 100%;
   background: linear-gradient(
-      rgba(246, 247, 247, 0.85), /* Черный фильтр с 50% прозрачностью */
+      rgba(246, 247, 247, 0.85),
       rgba(246, 247, 247, 0.85)
-    )
+    );
+  box-sizing: border-box;
+  position: relative;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 a,
@@ -31,9 +42,16 @@ a,
   padding: 3px;
 }
 
+@font-face {
+  font-family: 'GlebSalinFont';
+  src: url('/glebsalin/fonts/Gleb.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; 
+  font-display: swap;
+}
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+@media (max-width: 500px) { 
+  #app {
+    padding: 0 0.5rem; /* Горизонтальные отступы */
   }
 }

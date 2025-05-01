@@ -2,7 +2,6 @@
   <Header />
   <NavBar />
   <router-view />
-  <div style="height: 1000px;"></div>
 </template>
 
 <script setup>
@@ -15,3 +14,7 @@ const appStyle = computed(() => ({
   backgroundImage: `url('${import.meta.env.BASE_URL}img/background.jpg')`
 }))
 </script>
+
+<style scoped>
+
+</style>
