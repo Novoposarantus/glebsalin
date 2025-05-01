@@ -20,7 +20,7 @@ const getImageUrl = (path) => {
 // Когда компонент Main.vue монтируется (т.е. пользователь на главной странице)
 onMounted(() => {
   // Добавляем класс к <body>
-  document.body.classList.add('main-page-background-active');
+  document.getElementById("app").classList.add('main-page-background-active');
 });
 
 // Когда компонент Main.vue размонтируется (т.е. пользователь уходит с главной)

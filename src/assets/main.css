@@ -9,25 +9,29 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background: linear-gradient(
+      rgba(246, 247, 247, 0.85),
+      rgba(246, 247, 247, 0.85)
+    );
 }
 
-body::before {
-  content: ""; /* Обязательно для псевдо-элементов */
-  position: fixed; /* Фиксируем относительно окна браузера */
-  inset: 0; /* top: 0; right: 0; bottom: 0; left: 0; - Растягиваем на весь экран */
-  z-index: -1; /* Помещаем ПОД основной контент */
+#app::before {
+  content: "";
+  position: absolute; /* Позиционируем относительно #app */
+  inset: 0; /* Растягиваем на весь #app */
+  z-index: -1; /* Помещаем ПОД контент #app */
 
-  /* Начальное состояние - фона нет, он прозрачен */
+  /* Начальное состояние - фона нет, прозрачен */
   background-image: none;
-  background-size: cover; /* Масштабируем, чтобы покрыть */
-  background-position: center center; /* Центрируем */
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
-
-  pointer-events: none;
+  pointer-events: none; /* Чтобы не мешал кликам */
 }
 
-body.main-page-background-active::before {
+#app.main-page-background-active::before {
   background-image: url('/glebsalin/img/background.png');
+  opacity: 0.3;
 }
 
 #app {
@@ -40,12 +44,9 @@ body.main-page-background-active::before {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  background: linear-gradient(
-      rgba(246, 247, 247, 0.85),
-      rgba(246, 247, 247, 0.85)
-    );
   box-sizing: border-box;
   position: relative;
+  isolation: isolate;
 }
 
 *, *::before, *::after {
