@@ -1,0 +1,1 @@
+import{c as r,F as a,f as o,u as c,b as t}from"./index-BuIRbrTV.js";const n={class:"art-grid"},_=["src"],k={__name:"Artworks",setup(l){const e=new Array(12);return(m,i)=>(t(),r("div",n,[(t(!0),r(a,null,o(c(e),(u,s)=>(t(),r("img",{key:s,src:`/img/artwork-${s+1}.jpg`,alt:"Artwork",class:"art-image"},null,8,_))),128))]))}};export{k as default};
