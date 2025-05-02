@@ -20,6 +20,8 @@
       :imgs="lightboxImages"
       :index="lightboxIndex"
       @hide="handleLightboxHide"
+      :moveDisabled="true"
+      :rotateDisabled="true"
     />
     </div>
 </template>

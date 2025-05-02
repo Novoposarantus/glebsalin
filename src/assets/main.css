@@ -85,6 +85,32 @@ a,
   height: 100px;
 }
 
+/* Находим панель инструментов */
+.vel-toolbar {
+  /* Можно добавить стили для самой панели, если нужно */
+}
+
+/* Скрываем кнопки зума */
+.vel-toolbar button[title="Zoom in"],
+.vel-toolbar button[aria-label="Zoom in"],
+.vel-toolbar button[title="Zoom out"],
+.vel-toolbar button[aria-label="Zoom out"] {
+  display: none !important;
+}
+
+/* Скрываем кнопку поворота (если rotateDisabled не скрыл ее) */
+.vel-toolbar button[title="Rotate right"],
+.vel-toolbar button[aria-label="Rotate right"] {
+  display: none !important;
+}
+
+/* Скрываем кнопку скачивания (если она есть и не нужна) */
+.vel-toolbar button[title="Download"],
+.vel-toolbar button[aria-label="Download"] {
+   display: none !important;
+}
+
+
 @font-face {
   font-family: 'GlebSalinFont';
   src: url('/glebsalin/fonts/Gleb.ttf') format('truetype');
